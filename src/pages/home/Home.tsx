@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MDBTypography, MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import { useSpring, animated } from '@react-spring/web';
+import { useLocation, useNavigate } from 'react-router';
 
 function Home (): JSX.Element {
+  const navigate = useNavigate();
   return (<>
     <MDBContainer>
-      <img src={'/poliwrathWalkingRight.gif'} alt="poliwrathWalkingRight" />
-      <img src={'/poliwrathWalkingLeft.gif'} alt="poliwrathWalkingLeft" />
-
       <MDBRow style={{ minHeight: '100vh' }} className='d-flex justify-content-center text-center align-items-center' >
         <MDBCol md='6' >
           <MDBRow className='mb-3'>
@@ -19,12 +19,18 @@ function Home (): JSX.Element {
           </MDBRow>
           <MDBRow className='mb-3'>
             <MDBCol>
-              <MDBTypography tag='medium' className='text-muted' style={{ fontFamily: "'Roboto'", margin: '.5rem' }}>
-                Check out my work
-              </MDBTypography>
-              <MDBTypography tag='medium' className='text-muted' style={{ fontFamily: "'Roboto'", margin: '.5rem' }}>
+              <MDBRow>
+                <MDBCol>
+                  <MDBTypography onClick={() => { navigate('/work'); }} tag='medium' className='text-muted' style={{ fontFamily: "'Roboto'", margin: '.5rem', cursor: 'pointer' }}>
+                  Check out my work
+                  </MDBTypography>
+                </MDBCol>
+                <MDBCol>
+                  <MDBTypography onClick={() => { navigate('/about'); }} tag='medium' className='text-muted' style={{ fontFamily: "'Roboto'", margin: '.5rem', cursor: 'pointer' }}>
                 Learn more about me
-              </MDBTypography>
+                  </MDBTypography>
+                </MDBCol>
+              </MDBRow>
             </MDBCol>
           </MDBRow>
         </MDBCol>
