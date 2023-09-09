@@ -3,7 +3,10 @@ import React, { useState } from 'react';
 import { Stack } from 'react-bootstrap';
 import type social from '../../types/socialIcon';
 import Social from '../../components/Social';
+import { useLocation, useNavigate } from 'react-router';
+
 export default function About (): JSX.Element {
+  const navigate = useNavigate();
   const [hover, setHover] = useState < Record<string, boolean>>({
     linkedIn: false,
     instagram: false,
@@ -36,11 +39,12 @@ export default function About (): JSX.Element {
 
     }
   };
+
   return (
     <MDBContainer>
       <MDBRow style={{ marginTop: '4rem' }} className='gx-5' >
         <MDBCol >
-          <img src='https://mdbootstrap.com/img/new/standard/city/044.webp'
+          <img src='me_mom.png'
             className='img-fluid rounded'
             alt='example'/>
         </MDBCol>
@@ -51,7 +55,7 @@ export default function About (): JSX.Element {
           <MDBTypography tag='medium' className='text-muted' style={{ fontFamily: "'Roboto'" }}>
             {"I'm a software engineer with a background in Artifical Intelligence but honestly I am just a guy"}
           </MDBTypography>
-          <img src='https://mdbootstrap.com/img/new/standard/city/044.webp'
+          <img src='Dec22NN_017.jpg'
             className='img-fluid rounded'
             alt='example'/>
         </MDBCol>

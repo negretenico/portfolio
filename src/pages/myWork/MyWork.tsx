@@ -7,9 +7,12 @@ import {
   MDBTabsContent,
   MDBTabsPane,
   MDBRow,
-  MDBCol
+  MDBCol,
+  MDBContainer
 } from 'mdb-react-ui-kit';
 import ThumbNail from '../../components/ThumbNail';
+import { codeSnippets } from '../../data/codeSnippets';
+import CodeSnippets from '../../components/CodeSnippets';
 
 export default function MyWork (): JSX.Element {
   const [iconsActive, setIconsActive] = useState('tab1');
@@ -166,32 +169,56 @@ As the project is still in progress, ongoing improvements and refinements are ex
 
       <MDBTabsContent>
         <MDBTabsPane show={iconsActive === 'tab1'}>
-          {
-            mlFullStackThumbNails.map(thumbNail => {
-              return (
-                <>
-                  <ThumbNail key={thumbNail.title} {...thumbNail} />
-                </>
-              );
-            })
-          }
+          <MDBContainer>
+            <MDBRow>
+              {
+                mlFullStackThumbNails.map(thumbNail => {
+                  return (
+                    <>
+                      <MDBCol col='4'>
+                        <ThumbNail key={thumbNail.title} {...thumbNail} />
+                      </MDBCol>
+                    </>
+                  );
+                })
+              }
+            </MDBRow>
+          </MDBContainer>
         </MDBTabsPane>
         <MDBTabsPane show={iconsActive === 'tab2'}>
-          <MDBRow>
-            {
-              fullStackThumbNails.map(thumbNail => {
-                return (
-                  <>
-                    <MDBCol md="1">
-                      <ThumbNail key={thumbNail.title} {...thumbNail} />
-                    </MDBCol>
-                  </>
-                );
-              })
-            }
-          </MDBRow>
+          <MDBContainer>
+            <MDBRow>
+              {
+                fullStackThumbNails.map(thumbNail => {
+                  return (
+                    <>
+                      <MDBCol col='4'>
+                        <ThumbNail key={thumbNail.title} {...thumbNail} />
+                      </MDBCol>
+                    </>
+                  );
+                })
+              }
+            </MDBRow>
+          </MDBContainer>
         </MDBTabsPane>
-        <MDBTabsPane show={iconsActive === 'tab3'}>Tab 3 content</MDBTabsPane>
+        <MDBTabsPane show={iconsActive === 'tab3'}>
+          <MDBContainer>
+            <MDBRow>
+              {
+                codeSnippets.map((codeSnippet, i) => {
+                  return (
+                    <>
+                      <MDBCol col ='4'>
+                        <CodeSnippets key={`CodeSnippet-${i}`} code={codeSnippet} />
+                      </MDBCol>
+                    </>
+                  );
+                })
+              }
+            </MDBRow>
+          </MDBContainer>
+        </MDBTabsPane>
       </MDBTabsContent>
     </>
   );
