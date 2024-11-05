@@ -1,24 +1,30 @@
 import { useMutation, useQuery } from "@tanstack/react-query"
 import { useEffect } from "react"
 import { toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 
-export const useCopy= ({filePath}:{filePath:string})=>{
-    const {data,isError,isFetching,isSuccess}= useQuery({
+
+export const useCopy= ({filePath}:{filePath:string}): {data:Record<string,any>,isLoading:boolean}=>{
+    const {data,isError,isLoading,isSuccess}= useQuery({
         queryKey: [filePath],
-        queryFn: ()=>{
-            fetch(filePath)
+        queryFn: async ()=>{
+           const res = await fetch(filePath);
+           if(!res.ok){
+            throw new Error("Failed to fetch the data")
+           }
+           return res.json()
         }
     })
-    useEffect(()=>{
-        if(isError){
-            toast.error("We had an issue reading in the copy")
+    useEffect(() => {
+        if (isError) {
+            toast.dismiss();
+            toast.error("We had an issue reading in the copy");
+        } else if (isLoading) {
+            toast.loading("Loading file...");
+        } else if (isSuccess) {
+            toast.dismiss();
+            toast.success("Copy loaded successfully!");
         }
-        if(isFetching){
-            toast.loading("We are loading in the file")
-        }
-        if(isSuccess){
-            toast.success("We loaded the copy")
-        }
-    },[isError,isFetching,isSuccess])
-    return data
+    }, [isError, isLoading, isSuccess]);
+    return {data,isLoading}
 }
