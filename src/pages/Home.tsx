@@ -4,7 +4,7 @@ import { COLORS } from "../constants";
 import { useNavigate } from "react-router-dom";
 export default function Home() {
   const { data: copy, isLoading } = useCopy({ filePath: "/copy/home.json" });
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   if (isLoading) {
     return <p>Spinner</p>;
   }
@@ -27,7 +27,7 @@ export default function Home() {
           </div>
           <span
             style={{ color: COLORS.LIGHT_VIOLET, cursor: "pointer" }}
-            // onClick={() => navigate("contact")}
+            onClick={() => navigate("contact")}
             className="mx-1 text-lg font-extrabold relative inline-block stroke-current mt-32"
           >
             {copy.footer}
