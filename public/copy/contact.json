@@ -6,5 +6,9 @@
     "email" : {
         "title" : "EMAIL",
         "email" : "negretenico0@gmail.com"
+    },
+    "body":{
+        "main" : "Get in touch if you’re interested in teaming up to build something great together!",
+        "visit" : "Social Medias"
     }
 }
