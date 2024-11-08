@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter, Route, Routes } from "react-router-dom";

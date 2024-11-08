@@ -1,6 +1,6 @@
 import React from "react";
-import { useCopy } from "../utils/useCopy";
-import { COLORS } from "../constants";
+import { useCopy } from "../../utils/useCopy";
+import { COLORS } from "../../constants";
 import { useNavigate } from "react-router-dom";
 export default function Home() {
   const { data: copy, isLoading } = useCopy({ filePath: "/copy/home.json" });
