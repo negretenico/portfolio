@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Contact from "./pages/Contact/Contact";
+import AboutMe from "./pages/AboutMe/AboutMe";
 const queryClient = new QueryClient();
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/aboutme" element={<AboutMe />} />
           </Routes>
         </QueryClientProvider>
       </div>
