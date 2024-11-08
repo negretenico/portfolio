@@ -3,21 +3,7 @@ import { useCopy } from "../../utils/useCopy";
 import { Nullish } from "../../types/types";
 import { COLORS } from "../../constants";
 import { useChangeBackgroundColor } from "../../utils/useChangeBackgroundColor";
-const Icon = ({
-  svgProps,
-  pathProps,
-}: {
-  svgProps: React.SVGProps<SVGSVGElement>;
-  pathProps: React.SVGProps<SVGPathElement>;
-}) => {
-  return (
-    <>
-      <svg {...svgProps}>
-        <path {...pathProps} />
-      </svg>
-    </>
-  );
-};
+import { Icon } from "../../components/Icon";
 
 const Icons = () => {
   const ListItem = ({

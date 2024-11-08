@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useCopy } from "../../utils/useCopy";
-import { Nullish } from "../../types/types";
-import { COLORS } from "../../constants";
+import { Text } from "../../components/Text";
 const Image = () => {
   return (
     <>
@@ -11,30 +10,10 @@ const Image = () => {
     </>
   );
 };
-const Text = ({
-  text,
-  className,
-  color,
-}: {
-  text: Nullish<string>;
-  className: string;
-  color?: keyof typeof COLORS;
-}) => {
-  return (
-    <>
-      <p
-        className={className}
-        style={{ color: color ? COLORS[color] : COLORS.BLACK }}
-      >
-        {text}
-      </p>
-    </>
-  );
-};
 export default function AboutMe() {
   const { data } = useCopy({ filePath: "/copy/aboutme.json" });
   return (
-    <div className="flex flex-row items-center justify-center">
+    <div className="flex flex-row items-center justify-center mt-20">
       <div className="max-w-lg mr-32 space-y-10">
         <Text
           text={data?.title}
