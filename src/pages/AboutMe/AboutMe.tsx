@@ -1,15 +1,8 @@
 import React from "react";
 import { useCopy } from "../../utils/useCopy";
 import { Text } from "../../components/Text";
-const Image = () => {
-  return (
-    <>
-      <div className="overflow-hidden rounded-t-full">
-        <img src="/pfp.jpg" className="object-cover w-full h-full" />
-      </div>
-    </>
-  );
-};
+import { Image } from "../../components/Image";
+
 export default function AboutMe() {
   const { data } = useCopy({ filePath: "/copy/aboutme.json" });
   return (
@@ -23,7 +16,13 @@ export default function AboutMe() {
         <Text text={data?.subtitle} className="text-xl text-left" />
       </div>
       <div className="relative w-full max-w-lg">
-        <Image />
+        <Image
+          imageProps={{
+            src: "/pfp.jpg",
+            alt: "pfp",
+            className: "object-cover w-full h-full",
+          }}
+        />
       </div>
     </div>
   );

@@ -1,0 +1,18 @@
+{
+  "title": "Software Focuses",
+  "frontend": {
+    "title": "Frontend Development",
+    "subtitle": "Building engaging, user-centered experiences",
+    "details": "I specialize in creating responsive and dynamic UIs using modern JavaScript frameworks like React. My frontend work focuses on seamless user interactions, optimized loading times, and accessible design, ensuring an engaging and inclusive experience for all users."
+  },
+  "backend": {
+    "title": "Backend Development",
+    "subtitle": "Architecting reliable and efficient server-side solutions",
+    "details": "With a strong foundation in server-side technologies like Spring Boot and Node.js, my backend focus lies in designing scalable architectures, implementing secure APIs, and optimizing database performance to support fast and dependable applications."
+  },
+  "ai": {
+    "title": "Artificial Intelligence",
+    "subtitle": "Leveraging AI to drive intelligent solutions",
+    "details": "I explore AI-driven applications that improve user experience and decision-making. This includes implementing machine learning models, using data analytics, and employing automation where it enhances the product. My focus is on AI as a tool for augmenting software functionality in a way that aligns with user needs."
+  }
+}
