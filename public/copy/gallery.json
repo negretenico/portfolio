@@ -1,4 +1,10 @@
 {
     "title" :"Code Gallery",
-    "subtitle" : "here are some projects I've worked on "
+    "subtitle" : "here are some projects I've worked on ",
+    "frontend" : {
+        "portfolio" : "Portfolio",
+        "micro" : "Microfrontends",
+        "cpc" : "Clean Plate Club",
+        "anime" : "Anime"
+    }
 }
