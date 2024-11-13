@@ -13,10 +13,10 @@ export default function Gallery() {
   const { data: copy } = useCopy({ filePath: "/copy/gallery.json" });
 
   const tabs = [
-    { id: 0, label: "Tab 1", content: <Accordion /> },
-    { id: 1, label: "Tab 2", content: <>Hi2</> },
-    { id: 2, label: "Tab 3", content: <>Hi3</> },
-    { id: 3, label: "Tab 4", content: <>Hi4</> },
+    { id: 0, label: "Tab 1", body: <Accordion /> },
+    { id: 1, label: "Tab 2", body: <>Hi2</> },
+    { id: 2, label: "Tab 3", body: <>Hi3</> },
+    { id: 3, label: "Tab 4", body: <>Hi4</> },
   ];
   return (
     <>
@@ -24,7 +24,7 @@ export default function Gallery() {
         <Text text={copy?.title} />
         <Text text={copy?.subtitle} />
         <div className="max-w-lg">
-          <Tabs isVertical tabs={tabs} />
+          <Tabs tabs={tabs} />
         </div>
       </div>
     </>
