@@ -2,8 +2,11 @@
     "title" :"Code Gallery",
     "subtitle" : "here are some projects I've worked on ",
     "frontend" : {
-        "portfolio" : "Portfolio",
-        "micro" : "Microfrontends",
+        "micro" :  {
+            "title": "Microfrontend",
+            "repo_link": "https://github.com/negretenico/microfrontend",
+            "description" : "Demonstration of how to use microfrontends to decouple a website."
+        },
         "cpc" : "Clean Plate Club",
         "anime" : "Anime"
     }

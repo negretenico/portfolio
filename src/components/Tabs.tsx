@@ -16,11 +16,22 @@ type TabItem = {
 };
 type TabProps = {
   tabs: Array<TabItem>;
+  isVertical?: boolean;
 };
-export const Tabs = ({ tabs }: TabProps) => {
+export const Tabs = ({ tabs, isVertical = false }: TabProps) => {
   const defaultStyling = {};
-  const TabContent = ({ body }: { body: React.JSX.Element }) => {
-    return <MDBTabsPane>{body}</MDBTabsPane>;
+  const TabContent = ({
+    body,
+    isOpen,
+  }: {
+    body: React.JSX.Element;
+    isOpen: boolean;
+  }) => {
+    return (
+      <MDBTabsPane open={isOpen}>
+        <div className={"my-4"}>{body}</div>
+      </MDBTabsPane>
+    );
   };
   const [activeTabId, setActiveTabId] =
     useState<Nullish<string | number>>(null);
@@ -30,12 +41,14 @@ export const Tabs = ({ tabs }: TabProps) => {
     }
     setActiveTabId(id);
   };
+  const tabClassName = isVertical ? "flex flex-col" : undefined;
+  const containerClassName = `grid grid-cols-${isVertical ? 2 : 1}`;
   return (
     <>
-      <MDBTabs>
-        {tabs.map((tab) => {
-          return (
-            <>
+      <div className={containerClassName}>
+        <MDBTabs className={tabClassName}>
+          {tabs.map((tab) => {
+            return (
               <MDBTabsItem key={tab.id}>
                 <MDBTabsLink
                   style={tab.styling ?? defaultStyling}
@@ -47,15 +60,21 @@ export const Tabs = ({ tabs }: TabProps) => {
                   {tab.label}
                 </MDBTabsLink>
               </MDBTabsItem>
-            </>
-          );
-        })}
-      </MDBTabs>
-      <MDBTabsContent>
-        {tabs.map((tab, idx) => {
-          return <TabContent body={tab.body} key={`${tab.id}-body-${idx}`} />;
-        })}
-      </MDBTabsContent>
+            );
+          })}
+        </MDBTabs>
+        <MDBTabsContent>
+          {tabs.map((tab, idx) => {
+            return (
+              <TabContent
+                body={tab.body}
+                key={`${tab.id}-body-${idx}`}
+                isOpen={tab.id === activeTabId}
+              />
+            );
+          })}
+        </MDBTabsContent>
+      </div>
     </>
   );
 };
