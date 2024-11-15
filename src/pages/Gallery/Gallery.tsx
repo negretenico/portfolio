@@ -11,6 +11,7 @@ import { CodeCard } from "../../components/CodeCard";
 
 export default function Gallery() {
   const { data: copy } = useCopy({ filePath: "/copy/gallery.json" });
+  // https://gist.github.com/negretenico/0e24894f1292ba3ded1740273a80c853
   const tabs = [
     {
       id: 0,
@@ -20,11 +21,8 @@ export default function Gallery() {
           title={copy?.frontend?.micro?.title}
           gitLink={copy?.frontend?.micro?.repo_link}
           gist={{
-            iframeProps: {
-              title: "IFRAME",
-              width: "100%",
-              height: "100%",
-              src: "https://gist.github.com/negretenico/0e24894f1292ba3ded1740273a80c853",
+            gistProps: {
+              gist: "negretenico/0e24894f1292ba3ded1740273a80c853",
             },
           }}
           description={copy?.frontend?.micro?.description}
