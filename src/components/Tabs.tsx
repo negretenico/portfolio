@@ -29,7 +29,7 @@ export const Tabs = ({ tabs, isVertical = false }: TabProps) => {
   }) => {
     return (
       <MDBTabsPane open={isOpen}>
-        <div className={"my-4"}>{body}</div>
+        <div>{body}</div>
       </MDBTabsPane>
     );
   };
@@ -41,15 +41,15 @@ export const Tabs = ({ tabs, isVertical = false }: TabProps) => {
     }
     setActiveTabId(id);
   };
-  const tabClassName = isVertical ? "flex flex-col" : undefined;
-  const containerClassName = `grid grid-cols-${isVertical ? 2 : 1}`;
+  const tabClassName = isVertical ? "max-w-36 flex flex-col" : undefined;
+  const containerClassName = `grid grid-rows-${isVertical ? 1 : 2} grid-flow-col`;
   return (
     <>
       <div className={containerClassName}>
         <MDBTabs className={tabClassName}>
           {tabs.map((tab) => {
             return (
-              <MDBTabsItem key={tab.id}>
+              <MDBTabsItem className={"p-2"} key={tab.id}>
                 <MDBTabsLink
                   style={tab.styling ?? defaultStyling}
                   onClick={() => {

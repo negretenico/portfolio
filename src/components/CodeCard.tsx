@@ -44,7 +44,7 @@ export const CodeCard = ({
           </a>
         </div>
       </MDBCardHeader>
-      <MDBCardBody>
+      <MDBCardBody className={"max-h-128 overflow-auto"}>
         <Gist {...gist} />
       </MDBCardBody>
       <MDBCardFooter className="text-muted">

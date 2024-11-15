@@ -17,29 +17,30 @@ export default function Gallery() {
       id: 0,
       label: "Tab 1",
       body: (
-        <CodeCard
-          title={copy?.frontend?.micro?.title}
-          gitLink={copy?.frontend?.micro?.repo_link}
-          gist={{
-            gistProps: {
-              gist: "negretenico/0e24894f1292ba3ded1740273a80c853",
-            },
-          }}
-          description={copy?.frontend?.micro?.description}
-        />
+        <div className={"max-h-80"}>
+          <CodeCard
+            title={copy?.frontend?.micro?.title}
+            gitLink={copy?.frontend?.micro?.repo_link}
+            gist={{
+              gistProps: {
+                gist: "negretenico/0e24894f1292ba3ded1740273a80c853",
+              },
+            }}
+            description={copy?.frontend?.micro?.description}
+          />
+        </div>
       ),
     },
     { id: 1, label: "Tab 2", body: <>Hi2</> },
     { id: 2, label: "Tab 3", body: <>Hi3</> },
     { id: 3, label: "Tab 4", body: <>Hi4</> },
   ];
-  //<script src="https://gist.github.com/your-username/your-gist-id.js"></script>
   return (
     <>
       <div>
         <Text text={copy?.title} />
         <Text text={copy?.subtitle} />
-        <div className="max-w-lg">
+        <div>
           <Tabs tabs={tabs} isVertical />
         </div>
       </div>
