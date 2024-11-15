@@ -33,8 +33,7 @@ export const Tabs = ({ tabs, isVertical = false }: TabProps) => {
       </MDBTabsPane>
     );
   };
-  const [activeTabId, setActiveTabId] =
-    useState<Nullish<string | number>>(null);
+  const [activeTabId, setActiveTabId] = useState<Nullish<string | number>>(0);
   const handleSetActive = (id: string | number): void => {
     if (id === activeTabId) {
       return;
@@ -42,14 +41,15 @@ export const Tabs = ({ tabs, isVertical = false }: TabProps) => {
     setActiveTabId(id);
   };
   const tabClassName = isVertical ? "max-w-36 flex flex-col" : undefined;
-  const containerClassName = `grid grid-rows-${isVertical ? 1 : 2} grid-flow-col`;
+  const containerClassName = `grid grid-rows-${isVertical ? "1 grid-flow-col" : 2} `;
+  const tabPadding = isVertical ? "pr-8" : "pb-8";
   return (
     <>
       <div className={containerClassName}>
         <MDBTabs className={tabClassName}>
           {tabs.map((tab) => {
             return (
-              <MDBTabsItem className={"p-2"} key={tab.id}>
+              <MDBTabsItem className={tabPadding} key={tab.id}>
                 <MDBTabsLink
                   style={tab.styling ?? defaultStyling}
                   onClick={() => {

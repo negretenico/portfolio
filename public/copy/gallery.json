@@ -1,13 +1,20 @@
 {
     "title" :"Code Gallery",
     "subtitle" : "here are some projects I've worked on ",
-    "frontend" : {
-        "micro" :  {
-            "title": "Microfrontend",
-            "repo_link": "https://github.com/negretenico/microfrontend",
-            "description" : "Demonstration of how to use microfrontends to decouple a website."
-        },
-        "cpc" : "Clean Plate Club",
-        "anime" : "Anime"
+    "software_types" : {
+        "frontend" : {
+            "micro" :  {
+                "title": "Microfrontend",
+                "repo_link": "https://github.com/negretenico/microfrontend",
+                "description" : "Demonstration of how to use microfrontends to decouple a website.",
+                "gist" :  "negretenico/0e24894f1292ba3ded1740273a80c853"
+            },
+            "cpc" :   {
+                "title": "Clean Plate Club",
+                "repo_link": "https://github.com/negretenico/clean-plate-club-ui/",
+                "description" : "Demonstration integration with Stripe in a react applicaiton.",
+                "gist" :  "/negretenico/99864cf02213795b0ea54401316aeea5"
+            }
+        }
     }
 }

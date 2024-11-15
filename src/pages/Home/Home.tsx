@@ -2,12 +2,10 @@ import React from "react";
 import { useCopy } from "../../utils/useCopy";
 import { COLORS } from "../../constants";
 import { useNavigate } from "react-router-dom";
+
 export default function Home() {
-  const { data: copy, isLoading } = useCopy({ filePath: "/copy/home.json" });
+  const { data: copy } = useCopy({ filePath: "/copy/home.json" });
   const navigate = useNavigate();
-  if (isLoading) {
-    return <p>Spinner</p>;
-  }
   const [beforeComma, afterComma] = copy.title.split(",");
   return (
     <>
