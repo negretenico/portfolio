@@ -15,6 +15,9 @@
                 "description" : "Demonstration integration with Stripe in a react applicaiton.",
                 "gist" :  "/negretenico/99864cf02213795b0ea54401316aeea5"
             }
+        },
+        "backend" :{
+            
         }
     }
 }

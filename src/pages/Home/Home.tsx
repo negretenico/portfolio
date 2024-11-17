@@ -4,8 +4,8 @@ import { COLORS } from "../../constants";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-  const { data: copy } = useCopy({ filePath: "/copy/home.json" });
   const navigate = useNavigate();
+  const { data: copy } = useCopy({ filePath: "/copy/home.json" });
   const [beforeComma, afterComma] = copy.title.split(",");
   return (
     <>
