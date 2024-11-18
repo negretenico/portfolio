@@ -8,6 +8,7 @@ export const useCopy = ({
 }: {
   filePath: string;
 }): { data: Record<string, any> } => {
+  // TODO: update this, it is reading in twice, at least giving in the toast twice.
   const { data, isError, isSuccess } = useSuspenseQuery({
     queryKey: [filePath],
     queryFn: async () => {

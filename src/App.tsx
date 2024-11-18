@@ -9,6 +9,7 @@ import AboutMe from "./pages/AboutMe/AboutMe";
 import Background from "./pages/Background/Background";
 import Focus from "./pages/Focus/Focus";
 import Gallery from "./pages/Gallery/Gallery";
+import { Navbar } from "./components/Navbar";
 const queryClient = new QueryClient();
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <ToastContainer position="top-right" autoClose={3000} />
           {/* TODO: add sprite for dancing :D  */}
           <Suspense fallback={<div>loaindg</div>}>
+            <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/contact" element={<Contact />} />
