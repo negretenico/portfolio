@@ -1,27 +1,28 @@
 import React, { ComponentProps } from "react";
-import { Gist } from "./Gist";
 import {
   MDBCard,
   MDBCardBody,
   MDBCardFooter,
   MDBCardHeader,
 } from "mdb-react-ui-kit";
-import { Icon } from "./Icon";
-import { Text } from "./Text";
-import { COLORS } from "../constants";
+import { Text } from "../Generic/Text";
+import { Icon } from "../Generic/Icon";
+import { COLORS } from "../../constants";
+import { Gist } from "../Gist/Gist";
 
-type CodeCardProps = {
+type ProjectProps = {
   title: string;
-  gitLink: string;
-  gist: ComponentProps<typeof Gist>;
+  repoLink: string;
   description: string;
+  gist: ComponentProps<typeof Gist>;
+  tags: Array<string>;
 };
-export const CodeCard = ({
+export const Project = ({
   title,
-  gist,
+  repoLink: gitLink,
   description,
-  gitLink,
-}: CodeCardProps) => {
+  gist,
+}: ProjectProps) => {
   return (
     <MDBCard alignment="center">
       <MDBCardHeader className="flex items-center justify-center px-4">

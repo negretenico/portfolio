@@ -1,6 +1,6 @@
 import React, { ComponentProps } from "react";
-import { Text } from "./Text";
-import { COLORS } from "../constants";
+import { Text } from "../Generic/Text";
+import { COLORS } from "../../constants";
 
 export const ImageWithDetails = ({
   Image,

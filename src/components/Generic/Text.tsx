@@ -1,6 +1,6 @@
 import React from "react";
-import { COLORS } from "../constants";
-import { Nullish } from "../types/types";
+import { COLORS } from "../../constants";
+import { Nullish } from "../../types/types";
 
 export const Text = ({
   text,

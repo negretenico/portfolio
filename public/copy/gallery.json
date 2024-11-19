@@ -1,23 +1,94 @@
 {
-    "title" :"Code Gallery",
-    "subtitle" : "here are some projects I've worked on ",
-    "software_types" : {
-        "frontend" : {
-            "micro" :  {
-                "title": "Microfrontend",
-                "repo_link": "https://github.com/negretenico/microfrontend",
-                "description" : "Demonstration of how to use microfrontends to decouple a website.",
-                "gist" :  "negretenico/0e24894f1292ba3ded1740273a80c853"
-            },
-            "cpc" :   {
-                "title": "Clean Plate Club",
-                "repo_link": "https://github.com/negretenico/clean-plate-club-ui/",
-                "description" : "Demonstration integration with Stripe in a react applicaiton.",
-                "gist" :  "/negretenico/99864cf02213795b0ea54401316aeea5"
-            }
-        },
-        "backend" :{
-            
-        }
+  "title": "Code Gallery",
+  "subtitle": "here are some projects I've worked on ",
+  "projects": [
+    {
+      "id": "micro",
+      "title": "Microfrontend",
+      "repo_link": "https://github.com/negretenico/microfrontend",
+      "description": "Demonstration of how to use microfrontends to decouple a website.",
+      "gist": "negretenico/0e24894f1292ba3ded1740273a80c853",
+      "tags": ["react", "javascript", "typescript"]
+    },
+    {
+      "id": "cpc",
+      "title": "Clean Plate Club",
+      "repo_link": "https://github.com/negretenico/clean-plate-club-ui/",
+      "description": "UI layer for a meal planning website",
+      "gist": "/negretenico/99864cf02213795b0ea54401316aeea5",
+      "tags": ["react", "javascript", "stripe", "typescript"]
+    },
+    {
+      "id": "cpc_service",
+      "title": "Clean Plate Club (service side)",
+      "gist": "/negretenico/4ff5a2a6cb27b60b8227a7c8810fe65e",
+      "description": "Service layer for a meal planning website",
+      "repo_link": "https://github.com/negretenico/clean-plate-club-backend",
+      "tags": ["backend", "python", "stripe"]
+    },
+    {
+      "id": "service_sentinel",
+      "title": "Service Sentinel",
+      "gist": "/negretenico/692043d0d7a8a1d28e81fd9e0a06fcfd",
+      "description": "Project used to determine if a service url is up and healthy",
+      "repo_link": "https://github.com/negretenico/ServiceSentinel",
+      "tags": ["backend", "go"]
+    },
+    {
+      "id": "hello_implementation",
+      "title": "Hello Implementation",
+      "gist": "/negretenico/55f836df6b01d57e3337b0e74d9288b4",
+      "description": "Project used to implement system designs from Hello Implementation",
+      "repo_link": "https://github.com/negretenico/HelloImplementation",
+      "tags": ["backend", "java", "javascript", "python"]
+    },
+    {
+      "id": "pokemon",
+      "title": "Pokemon type prediction",
+      "gist": "/negretenico/9f5a997bc47eeee04e515e6d04260182",
+      "description": "Project to predict the Pokemon's type based on their base stats",
+      "repo_link": "https://github.com/negretenico/predictor/tree/master",
+      "tags": ["ai", "classifier", "python"]
+    },
+    {
+      "id": "room_recognition",
+      "title": "Room Recognition",
+      "gist": "/negretenico/07cca6f61d2c5de96c4a1c27051ba325",
+      "description": "Project to recognize room that you are in.",
+      "repo_link": "https://github.com/negretenico/room-recoginition",
+      "tags": ["python", "classifier", "neural_net", "ai"]
+    },
+    {
+      "id": "champion_classifier",
+      "title": "Champion Classifier",
+      "gist": "/negretenico/c76982c81ab2fc20f50596703242e7e0",
+      "description": "Project to recognize league of legends champions.",
+      "repo_link": "https://github.com/negretenico/champion_classifier/tree/main",
+      "tags": ["python", "classifier", "neural_net", "ai"]
+    },
+    {
+      "id": "sarcasm",
+      "title": "Sarcasm",
+      "gist": "/negretenico/f78d49d3e779abdf4677b543b0ec6c42",
+      "description": "Project used to recognize sracasm and respond back with it.",
+      "repo_link": "https://github.com/negretenico/sarcasm",
+      "tags": ["python", "classifier", "neural_net", "ai", "generative"]
+    },
+    {
+      "id": "path_vis",
+      "title": "Path finding visualization",
+      "gist": "/negretenico/149ef2b7f39df76811174eb855115e81",
+      "description": "Project used to visualize several path finding algorithims",
+      "repo_link": "https://github.com/negretenico/path_finding_vis/tree/master",
+      "tags": ["python", "algo"]
+    },
+    {
+      "id": "algos",
+      "title": "Algorithms",
+      "gist": "/negretenico/0480fa9f228bfb075683b9318f1c5e3a",
+      "description": "Project used to implement various famous algorithms",
+      "repo_link": "https://github.com/negretenico/Algorithms",
+      "tags": ["python", "algo"]
     }
+  ]
 }

@@ -1,9 +1,9 @@
 import React, { ComponentProps } from "react";
 import { useCopy } from "../../utils/useCopy";
-import { Text } from "../../components/Text";
-import { ImageWithDetailContainer } from "../../components/ImageWithDetailContainer";
-import { ImageWithDetails } from "../../components/ImageWithDetails";
-import { Image } from "../../components/Image";
+import { Text } from "../../components/Generic/Text";
+import { ImageWithDetailContainer } from "../../components/Images/ImageWithDetailContainer";
+import { ImageWithDetails } from "../../components/Images/ImageWithDetails";
+import { Image } from "../../components/Images/Image";
 
 export default function Focus() {
   const { data: copy } = useCopy({ filePath: "/copy/focus.json" });

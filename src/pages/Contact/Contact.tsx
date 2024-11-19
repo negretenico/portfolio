@@ -1,9 +1,8 @@
-import React, { ComponentProps, ReactNode, useEffect } from "react";
+import React, { ComponentProps, ReactNode } from "react";
 import { useCopy } from "../../utils/useCopy";
-import { Nullish } from "../../types/types";
 import { COLORS } from "../../constants";
 import { useChangeBackgroundColor } from "../../utils/useChangeBackgroundColor";
-import { Icon } from "../../components/Icon";
+import { Icon } from "../../components/Generic/Icon";
 
 const Icons = () => {
   const ListItem = ({
