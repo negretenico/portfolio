@@ -17,8 +17,7 @@ function App() {
       <div className="App">
         <QueryClientProvider client={queryClient}>
           <ToastContainer position="top-right" autoClose={3000} />
-          {/* TODO: add sprite for dancing :D  */}
-          <Suspense fallback={<div>loaindg</div>}>
+          <Suspense fallback={<div>Loading</div>}>
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
