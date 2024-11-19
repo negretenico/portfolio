@@ -19,7 +19,7 @@ export default function Focus() {
       Image: (
         <Image
           imageProps={{
-            src: "/frontend.webp",
+            src: `${process.env.PUBLIC_URL}/frontend.webp`,
             alt: "frontend",
             className: singleImageContainerName,
           }}
@@ -39,7 +39,7 @@ export default function Focus() {
       Image: (
         <Image
           imageProps={{
-            src: "/backend.webp",
+            src: `${process.env.PUBLIC_URL}/backend.webp`,
             alt: "backend",
             className: singleImageContainerName,
           }}
@@ -56,7 +56,7 @@ export default function Focus() {
       Image: (
         <Image
           imageProps={{
-            src: "/ai.webp",
+            src: `${process.env.PUBLIC_URL}/ai.webp`,
             alt: "ai",
             className: singleImageContainerName,
           }}

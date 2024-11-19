@@ -109,7 +109,7 @@ export default function AboutMe() {
       <div className="ml-6">
         <Image
           imageProps={{
-            src: "/pfp.jpg",
+            src: `${process.env.PUBLIC_URL}/pfp.jpg`,
             alt: "pfp",
             className: "h-full max-h-128 mb-3",
           }}

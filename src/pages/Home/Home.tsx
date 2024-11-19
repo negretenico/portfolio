@@ -11,7 +11,11 @@ export default function Home() {
     <>
       <div className="flex flex-col justify-center items-center">
         <div className="flex flex-col">
-          <img src="logo.png" alt="logo" className="w-64 h-64 rounded-full" />
+          <img
+            src={`${process.env.PUBLIC_URL}/logo.png`}
+            alt="logo"
+            className="w-64 h-64 rounded-full"
+          />
         </div>
         <div className="mt-8">
           <span className="text-6xl mb-5" style={{ color: COLORS.BLACK }}>

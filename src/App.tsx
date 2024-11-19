@@ -13,10 +13,11 @@ import { Navbar } from "./components/Generic/Navbar";
 const queryClient = new QueryClient();
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio">
       <div className="App">
         <QueryClientProvider client={queryClient}>
           <ToastContainer position="top-right" autoClose={3000} />
+          {/* TODO: add sprite for dancing :D  */}
           <Suspense fallback={<div>Loading</div>}>
             <Navbar />
             <Routes>

@@ -11,7 +11,7 @@ export const useCopy = ({
   const { data, isError, isSuccess, isFetching } = useSuspenseQuery({
     queryKey: [filePath],
     queryFn: async () => {
-      const res = await fetch(filePath);
+      const res = await fetch(`${process.env.PUBLIC_URL}/${filePath}`);
       if (!res.ok) {
         throw new Error("Failed to fetch the data");
       }
