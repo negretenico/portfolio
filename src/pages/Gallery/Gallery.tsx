@@ -3,6 +3,7 @@ import { useCopy } from "../../utils/useCopy";
 import { Text } from "../../components/Generic/Text";
 import { Gist } from "../../components/Gist/Gist";
 import { Projects } from "../../components/Project/Projects";
+import { IllustrationText } from "../../components/Generic/IllustrationText";
 
 export default function Gallery() {
   const { data: copy } = useCopy({ filePath: "/copy/gallery.json" });
@@ -26,13 +27,40 @@ export default function Gallery() {
         },
       };
     });
+  const sub_text = copy?.subtitle.split("REPLACE_ME");
   return (
     <>
       <div>
-        <Text text={copy?.title} />
-        <Text text={copy?.subtitle} />
+        <div className={"flex flex-col  items-center justify-center"}>
+          <Text text={copy?.title} className="text-6xl" color="LIGHT_VIOLET" />
+          <div className={"flex"}>
+            <Text text={sub_text[0]} className="text-xl" />
+            <IllustrationText
+              text={{
+                text: "projects",
+                className: "text-xl m-0 p-0",
+                color: "BLACK",
+              }}
+              icon={{
+                svgProps: {
+                  className: "w-full max-h-1.5",
+                  viewBox: "0 0 55 5",
+                  xmlns: "http://www.w3.org/2000/svg",
+                  preserveAspectRatio: 'none"',
+                },
+                pathProps: {
+                  d: "M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002",
+                  strokeWidth: "2",
+                },
+              }}
+            />
+            <Text text={sub_text[1]} className="text-xl " />
+          </div>
+        </div>
         <div className={"flex flex-row items-center justify-center"}>
-          <Projects projects={projects} />
+          <div className="w-full max-w-6xl px-4">
+            <Projects projects={projects} />
+          </div>
         </div>
       </div>
     </>

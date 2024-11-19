@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -8,8 +8,7 @@ export const useCopy = ({
 }: {
   filePath: string;
 }): { data: Record<string, any> } => {
-  // TODO: update this, it is reading in twice, at least giving in the toast twice.
-  const { data, isError, isSuccess } = useSuspenseQuery({
+  const { data, isError, isSuccess, isFetching } = useSuspenseQuery({
     queryKey: [filePath],
     queryFn: async () => {
       const res = await fetch(filePath);
@@ -18,17 +17,16 @@ export const useCopy = ({
       }
       return res.json();
     },
+    staleTime: Infinity,
   });
-  const loadingId = useRef<any>(null);
   useEffect(() => {
+    if (!isFetching) return;
     if (isError) {
-      if (toast.isActive(loadingId.current)) toast.dismiss();
       toast.error("We had an issue reading in the copy");
     }
     if (isSuccess) {
-      if (toast.isActive(loadingId.current)) toast.dismiss();
       toast.success("Copy loaded successfully!");
     }
-  }, [isError, isSuccess]);
+  }, [isError, isSuccess, isFetching]);
   return { data };
 };

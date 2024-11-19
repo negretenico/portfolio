@@ -25,7 +25,7 @@ const links = {
 export const Navbar = () => {
   const navigate = useNavigate();
   return (
-    <div className={"flex flex-row"}>
+    <div className={"flex flex-row sticky top-0 z-40 mb-2"}>
       <nav
         style={{
           backgroundColor: COLORS.LIGHT_VIOLET,

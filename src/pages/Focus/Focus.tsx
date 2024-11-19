@@ -73,7 +73,7 @@ export default function Focus() {
     },
   ];
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen space-y-20">
+    <div className="flex flex-col justify-center items-center">
       <Text text={copy?.title} className={"text-5xl"} color={"LIGHT_VIOLET"} />
       <ImageWithDetailContainer
         arrayContainer={"flex flex-row  space-x-28 "}
