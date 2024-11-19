@@ -1,11 +1,11 @@
 import React, { ComponentProps } from "react";
 import { useCopy } from "../../utils/useCopy";
 import { Text } from "../../components/Generic/Text";
-import { Image } from "../../components/Images/Image";
 import { ImageWithDetailContainer } from "../../components/Images/ImageWithDetailContainer";
 import { COLORS } from "../../constants";
 import { ImageWithDetails } from "../../components/Images/ImageWithDetails";
 import { Icon, IconWithChildren } from "../../components/Generic/Icon";
+import { Image } from "../../components/Images/Image";
 
 export default function AboutMe() {
   const { data } = useCopy({ filePath: "/copy/aboutme.json" });
@@ -13,7 +13,7 @@ export default function AboutMe() {
 
   const svgProps = {
     fill: COLORS.LIGHT_VIOLET,
-    className: "size-28",
+    className: "size-12",
     viewBox: "0 0 24 24",
     role: "img",
     xmlns: "http://www.w3.org/2000/svg",
@@ -49,7 +49,7 @@ export default function AboutMe() {
       titleProps: { text: background?.university?.name },
       subTitleProps: {
         text: background?.university?.degree,
-        className: "text-base font-medium",
+        className: "text-sm font-medium",
       },
       detailsProps: { text: background?.university?.time },
     },
@@ -87,14 +87,14 @@ export default function AboutMe() {
     },
   ];
   return (
-    <div className="flex flex-row items-center justify-center mt-20">
-      <div className="max-w-lg mr-32 space-y-10">
+    <div className="flex flex-row items-center justify-center mt-16">
+      <div className="max-w-2xl">
         <Text
           text={data?.title}
           className="text-6xl text-center inline-block whitespace-nowrap"
           color="LIGHT_VIOLET"
         />
-        <Text text={data?.subtitle} className="text-xl text-left" />
+        <Text text={data?.subtitle} className="text-xl center" />
         <Text
           text={background?.title}
           className={"text-5xl"}
@@ -102,16 +102,16 @@ export default function AboutMe() {
         />
         <ImageWithDetailContainer
           parentContainer="flex flex-col justify-center items-center"
-          arrayContainer={"flex flex-row justify-center space-x-28 mr-28"}
+          arrayContainer={"flex flex-row justify-center"}
           imgsPorps={props}
         />
       </div>
-      <div className="relative w-full max-w-lg">
+      <div className="ml-6">
         <Image
           imageProps={{
             src: "/pfp.jpg",
             alt: "pfp",
-            className: "object-cover w-full h-full",
+            className: "h-full max-h-128 mb-3",
           }}
         />
       </div>
