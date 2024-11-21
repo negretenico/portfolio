@@ -38,7 +38,11 @@ export const Navbar = () => {
             style={{ cursor: "pointer" }}
             className="flex items-center"
           >
-            <img src="logo.png" alt="logo" className="rounded-full h-10" />
+            <img
+              src={`${process.env.PUBLIC_URL}/logo.png`}
+              alt="logo"
+              className="rounded-full h-10"
+            />
           </a>
           <ul className="flex my-auto">
             {Object.values(links).map((entry) => {

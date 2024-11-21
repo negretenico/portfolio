@@ -87,11 +87,11 @@ export default function AboutMe() {
     },
   ];
   return (
-    <div className="flex flex-row items-center justify-center mt-16">
+    <div className="flex flex-col  md:flex-row items-center justify-center mt-16">
       <div className="max-w-2xl">
         <Text
           text={data?.title}
-          className="text-6xl text-center inline-block whitespace-nowrap"
+          className="text-4xl sm:text-5xl md:text-6xl text-center inline-block whitespace-normal"
           color="LIGHT_VIOLET"
         />
         <Text text={data?.subtitle} className="text-xl center" />
@@ -111,7 +111,7 @@ export default function AboutMe() {
           imageProps={{
             src: `${process.env.PUBLIC_URL}/pfp.jpg`,
             alt: "pfp",
-            className: "h-full max-h-128 mb-3",
+            className: "w-full max-w-xs sm:max-w-sm md:max-w-md h-auto mb-3",
           }}
         />
       </div>
