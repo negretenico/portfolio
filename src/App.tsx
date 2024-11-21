@@ -9,6 +9,7 @@ import AboutMe from "./pages/AboutMe/AboutMe";
 import Focus from "./pages/Focus/Focus";
 import Gallery from "./pages/Gallery/Gallery";
 import { Navbar } from "./components/Generic/Navbar";
+import { NotFound } from "./pages/NotFound/NotFound";
 
 const queryClient = new QueryClient();
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Route path="/aboutme" element={<AboutMe />} />
               <Route path="/focus" element={<Focus />} />
               <Route path="/gallery" element={<Gallery />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </QueryClientProvider>

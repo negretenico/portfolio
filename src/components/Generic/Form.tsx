@@ -3,6 +3,7 @@ import { Text } from "./Text";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Button } from "./Button";
+import { send } from "@emailjs/browser";
 
 export const Form = () => {
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
@@ -19,11 +20,9 @@ export const Form = () => {
       message: values.message,
     };
     try {
-      // await send(serviceId, templateId, template, apiKey);
-      e.currentTarget.reset();
+      await send(serviceId, templateId, template, apiKey);
       toast.success("Email sent successfully!");
     } catch (e) {
-      console.log(e);
       toast.error("Something went wrong with sending the email");
     }
   };
