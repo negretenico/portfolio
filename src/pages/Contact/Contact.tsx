@@ -1,8 +1,8 @@
 import React, { ComponentProps, ReactNode } from "react";
 import { useCopy } from "../../utils/useCopy";
 import { COLORS } from "../../constants";
-import { useChangeBackgroundColor } from "../../utils/useChangeBackgroundColor";
 import { Icon } from "../../components/Generic/Icon";
+import { Form } from "../../components/Generic/Form";
 
 const Icons = () => {
   const ListItem = ({
@@ -160,30 +160,11 @@ export default function Contact() {
       ],
     },
   ];
-  useChangeBackgroundColor({ color: "FUSHIA" });
   return (
-    <div>
-      <div className="flex flex-col max-w-3xl absolute top-32 left-32">
-        <div className="text-left mt-8 ml-7">
-          <p style={{ color: COLORS.WHITE }} className="text-6xl text-wrap">
-            {copy?.body.main}
-          </p>
-          <hr
-            className="my-6"
-            style={{
-              border: 0,
-              height: ".125rem",
-              backgroundColor: COLORS.CREAM,
-            }}
-          />
-          <p style={{ color: COLORS.WHITE }} className="text-2xl text-left">
-            {copy?.body.visit}
-          </p>
-          <Icons />
-        </div>
-      </div>
-      <div className="flex flex-col absolute bottom-32 right-80">
-        <IconsWithText props={mailsAndEmails} />
+    <div className="grid grid-cols-1 xl:grid-cols-2">
+      <div>This is where the text and icons go</div>
+      <div>
+        <Form />
       </div>
     </div>
   );

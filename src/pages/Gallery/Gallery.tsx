@@ -32,13 +32,17 @@ export default function Gallery() {
     <>
       <div>
         <div className={"flex flex-col  items-center justify-center"}>
-          <Text text={copy?.title} className="text-6xl" color="LIGHT_VIOLET" />
+          <Text
+            text={copy?.title}
+            className="text-4xl lg:text-6xl"
+            color="LIGHT_VIOLET"
+          />
           <div className={"flex"}>
-            <Text text={sub_text[0]} className="text-xl" />
+            <Text text={sub_text[0]} className="text-lg lg:text-xl" />
             <IllustrationText
               text={{
                 text: "projects",
-                className: "text-xl m-0 p-0",
+                className: "text-lg lg:text-xl m-0 p-0",
                 color: "BLACK",
               }}
               icon={{
@@ -54,7 +58,7 @@ export default function Gallery() {
                 },
               }}
             />
-            <Text text={sub_text[1]} className="text-xl " />
+            <Text text={sub_text[1]} className="text-lg lg:text-xl" />
           </div>
         </div>
         <div className={"flex flex-row items-center justify-center"}>

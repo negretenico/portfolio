@@ -30,7 +30,7 @@ export default function Home() {
           <span
             style={{ color: COLORS.LIGHT_VIOLET, cursor: "pointer" }}
             onClick={() => navigate("contact")}
-            className="mx-1 text-lg font-extrabold relative inline-block stroke-current mt-32"
+            className="mx-1 text-lg font-extrabold relative inline-block stroke-current mt-8 xl:mt-32"
           >
             {copy.footer}
             <svg
