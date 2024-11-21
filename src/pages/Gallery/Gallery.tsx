@@ -58,7 +58,7 @@ export default function Gallery() {
           </div>
         </div>
         <div className={"flex flex-row items-center justify-center"}>
-          <div className="w-full max-w-6xl px-4">
+          <div className="w-full max-w-8xl px-4">
             <Projects projects={projects} />
           </div>
         </div>
