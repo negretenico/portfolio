@@ -163,7 +163,7 @@ export default function Contact() {
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2">
       <div>This is where the text and icons go</div>
-      <div>
+      <div className="max-w-lg">
         <Form />
       </div>
     </div>
