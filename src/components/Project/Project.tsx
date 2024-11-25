@@ -27,11 +27,14 @@ export const Project = ({
     <MDBCard alignment="center">
       <MDBCardHeader className="flex items-center justify-center px-4">
         <div className="flex flex-row items-center space-x-2">
-          <Text text={title} className="leading-none align-middle mb-0" />
+          <Text
+            text={title}
+            className={`leading-none align-middle mb-0 ${title}-title`}
+          />
           <ClickableIcon
             icon={{
               svgProps: {
-                className: "w-6 h-6",
+                className: `w-6 h-6 ${title}-git`,
                 fill: COLORS.BLACK,
                 viewBox: "0 0 24 24",
                 "aria-hidden": "true",
@@ -49,10 +52,10 @@ export const Project = ({
           />
         </div>
       </MDBCardHeader>
-      <MDBCardBody className={"max-h-128 overflow-auto"}>
+      <MDBCardBody className={`max-h-128 overflow-auto ${title}-gist`}>
         <Gist {...gist} />
       </MDBCardBody>
-      <MDBCardFooter className="text-muted">
+      <MDBCardFooter className={`text-muted ${title}-desc`}>
         <Text text={description} />
       </MDBCardFooter>
     </MDBCard>
