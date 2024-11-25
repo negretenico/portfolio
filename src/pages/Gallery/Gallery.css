@@ -1,0 +1,7 @@
+html, body {
+    scroll-behavior: smooth;
+}
+.joyride-step {
+    max-width: 90vw; /* Ensure tooltips stay within the viewport */
+    overflow-wrap: break-word; /* Prevent text from spilling over */
+}
