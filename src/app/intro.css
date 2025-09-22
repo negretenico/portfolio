@@ -1,0 +1,125 @@
+/* The classic FireRed/LeafGreen animation sequence */
+@keyframes glareSwipe {
+    0% {
+        transform: translateX(-100%) skew(-20deg);
+        opacity: 0;
+    }
+    10% {
+        transform: translateX(-100%) skew(-20deg);
+        opacity: 1;
+    }
+    40% {
+        transform: translateX(100vw) skew(-20deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(100vw) skew(-20deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(100vw) skew(-20deg);
+        opacity: 0;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        filter: brightness(0) contrast(1);
+    }
+    /* Glare sweep phase */
+    15% {
+        opacity: 1;
+        filter: brightness(3) contrast(0) saturate(0);
+    }
+    45% {
+        opacity: 1;
+        filter: brightness(3) contrast(0) saturate(0);
+    }
+    /* Black and white flicker phase */
+    50% {
+        opacity: 1;
+        filter: brightness(1) contrast(2) saturate(0);
+    }
+    55% {
+        opacity: 1;
+        filter: brightness(0.3) contrast(3) saturate(0);
+    }
+    60% {
+        opacity: 1;
+        filter: brightness(1.5) contrast(2) saturate(0);
+    }
+    65% {
+        opacity: 1;
+        filter: brightness(0.5) contrast(3) saturate(0);
+    }
+    70% {
+        opacity: 1;
+        filter: brightness(1.2) contrast(2) saturate(0);
+    }
+    /* Brief delay */
+    75% {
+        opacity: 1;
+        filter: brightness(1) contrast(1.5) saturate(0);
+    }
+    /* Final color reveal with flash */
+    80% {
+        opacity: 1;
+        filter: brightness(2) contrast(1) saturate(2);
+    }
+    85% {
+        opacity: 1;
+        filter: brightness(1.5) contrast(1) saturate(1.5);
+    }
+    100% {
+        opacity: 1;
+        filter: brightness(1) contrast(1) saturate(1);
+    }
+}
+
+@keyframes titleAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    75% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    85% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@utility animate-reveal {
+    animation: reveal 5s ease-out forwards;
+}
+
+@utility animate-glare-swipe {
+    animation: glareSwipe 5s ease-out forwards;
+}
+
+@utility animate-appear {
+    animation: titleAppear 5s ease-out forwards;
+}
+
+.glare-sweep {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.1) 20%, 
+        rgba(255, 255, 255, 0.8) 50%, 
+        rgba(255, 255, 255, 0.1) 80%, 
+        transparent 100%);
+    z-index: 10;
+    pointer-events: none;
+}
