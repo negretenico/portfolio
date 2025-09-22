@@ -1,0 +1,133 @@
+[
+  {
+    "id": 1,
+    "name": "Hello Implementation",
+    "number": "001",
+    "type": "System Design Implementation",
+    "description": "Implementation of large systems. In mainly Java\\Springboot but we can see other languages\\frmeworks like python and JS Credit several of the high level desgins come from HelloInterview",
+    "techStack": [
+      "Java",
+      "Spring Boot",
+      "Python",
+      "NodeJS",
+      "Redis",
+      "Kafka",
+      "PostgreSQL"
+    ],
+    "stats": {
+      "complexity": 90,
+      "performance": 85,
+      "scalability": 95,
+      "maintainability": 80
+    },
+    "image": "🚖",
+    "color": "from-yellow-400 to-yellow-600"
+  },
+  {
+    "id": 2,
+    "name": "Quantica",
+    "number": "002",
+    "type": "Real-Time Data Pipeline",
+    "description": "A real-time streaming pipeline that consumes Binance market data, publishes events to Kafka, enriches them with analytics and anomaly detection, and generates AI-powered markdown news reports.",
+    "techStack": [
+      "Python",
+      "Kafka",
+      "Redis",
+      "OpenAI API",
+      "PostgreSQL",
+      "Docker"
+    ],
+    "stats": {
+      "complexity": 88,
+      "performance": 92,
+      "scalability": 90,
+      "maintainability": 75
+    },
+    "image": "⚡",
+    "color": "from-blue-400 to-blue-600"
+  },
+  {
+    "id": 3,
+    "name": "N2",
+    "number": "003",
+    "type": "In-Memory JSON Document Store",
+    "description": "A lightweight embeddable in-memory JSON document store for Java, supporting CRUD operations, JsonPath querying, schema validation, and an optional web console with Spring Boot integration.",
+    "techStack": ["Java", "Spring Boot", "Undertow", "Jayway JsonPath"],
+    "stats": {
+      "complexity": 80,
+      "performance": 85,
+      "scalability": 70,
+      "maintainability": 90
+    },
+    "image": "📦",
+    "color": "from-green-400 to-green-600"
+  },
+  {
+    "id": 4,
+    "name": "Hello Technologies",
+    "number": "004",
+    "type": "Tech Implementation Library",
+    "description": "A hands-on project that implements simplified versions of popular technologies like Kafka, NoSQL, and relational databases to demonstrate their inner workings and enhance developer understanding.",
+    "techStack": [
+      "Java",
+      "Spring Boot",
+      "Kafka",
+      "MongoDB",
+      "PostgreSQL",
+      "Docker"
+    ],
+    "stats": {
+      "complexity": 85,
+      "performance": 80,
+      "scalability": 75,
+      "maintainability": 85
+    },
+    "image": "💡",
+    "color": "from-purple-400 to-purple-600"
+  },
+  {
+    "id": 5,
+    "name": "Glowing Octo Invention",
+    "number": "005",
+    "type": "Smart Contract Fuzzing Framework",
+    "description": "A Java-based framework for fuzzing and testing Ethereum smart contracts using Web3j, supporting both local contract simulations and deployed contracts, with oracle checks and detailed fuzzing reports.",
+    "techStack": [
+      "Java 21",
+      "Spring Boot",
+      "Maven",
+      "Web3j",
+      "Hardhat",
+      "functionico"
+    ],
+    "stats": {
+      "complexity": 90,
+      "performance": 85,
+      "scalability": 80,
+      "maintainability": 75
+    },
+    "image": "🦑",
+    "color": "from-cyan-400 to-cyan-600"
+  },
+  {
+    "id": 6,
+    "name": "EtherIndex",
+    "number": "006",
+    "type": "Ethereum Indexing Pipeline",
+    "description": "A Spring Boot application that connects to the Worldchain Sepolia testnet, providing real-time block tracking, resilient data ingestion, event-driven architecture, and a REST API for indexed blockchain data.",
+    "techStack": [
+      "Java 21",
+      "Spring Boot",
+      "Spring Events",
+      "H2 Database",
+      "Docker"
+    ],
+    "stats": {
+      "complexity": 85,
+      "performance": 88,
+      "scalability": 90,
+      "maintainability": 80
+    },
+    "image": "⛓️",
+    "color": "from-yellow-400 to-yellow-600"
+  }
+]

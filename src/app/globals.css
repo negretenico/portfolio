@@ -3,6 +3,10 @@
 @import "./traincercard.css";
 @import "./pausemenu.css";
 
+.perspective {
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
