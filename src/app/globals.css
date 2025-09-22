@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "./intro.css";
+@import "./traincercard.css";
+@import "./pausemenu.css";
 
 :root {
   --background: #ffffff;
