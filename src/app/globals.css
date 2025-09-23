@@ -2,6 +2,7 @@
 @import "./intro.css";
 @import "./traincercard.css";
 @import "./pausemenu.css";
+@import "./pokemon-center.css";
 
 .perspective {
   perspective: 2000px;
