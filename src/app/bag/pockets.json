@@ -1,0 +1,79 @@
+{
+  "items": { "name": "ITEMS", "items": [] },
+  "keyItems": {
+    "name": "KEY ITEMS",
+    "items": [
+      {
+        "id": 1,
+        "name": "TOWN MAP",
+        "description": "A detailed map showing Nico's professional journey and career milestones.",
+        "action": "download",
+        "link": "#"
+      },
+      {
+        "id": 2,
+        "name": "GITHUB CARD",
+        "description": "A special card that grants access to Nico's code repositories.",
+        "action": "link",
+        "link": "https://github.com"
+      }
+    ]
+  },
+  "pokeballs": {
+    "name": "TM CASE",
+    "items": [
+      {
+        "id": 3,
+        "name": "TM47 GITHUB ACTIONS",
+        "description": "Contains the move AUTOMATE. Streamlines deployment processes.",
+        "action": "link",
+        "link": "#"
+      },
+      {
+        "id": 4,
+        "name": "TM83 SPRING BOOT",
+        "description": "Contains the move RAPID DEV. Creates robust applications quickly.",
+        "action": "link",
+        "link": "#"
+      }
+    ]
+  },
+  "berries": {
+    "name": "QUEST LOG",
+    "items": [
+      {
+        "id": 5,
+        "name": "FIGHTIQ PROJECT",
+        "description": "An ongoing quest to revolutionize combat sports analytics.",
+        "action": "link",
+        "link": "#"
+      },
+      {
+        "id": 6,
+        "name": "PROTOTYPE ITEMS",
+        "description": "Various experimental projects in active development.",
+        "action": "link",
+        "link": "#"
+      }
+    ]
+  },
+  "tmCase": {
+    "name": "WRITINGS",
+    "items": [
+      {
+        "id": 7,
+        "name": "DEV JOURNAL",
+        "description": "A collection of technical insights and coding adventures.",
+        "action": "link",
+        "link": "#"
+      },
+      {
+        "id": 8,
+        "name": "CODE GUIDES",
+        "description": "Detailed tutorials crafted from real-world experience.",
+        "action": "link",
+        "link": "#"
+      }
+    ]
+  }
+}
