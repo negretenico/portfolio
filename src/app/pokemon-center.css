@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@theme {
+  --color-pokemon-center-l-red: #C85048;
+--color-pokemon-center-d-red: #A82028;
+--color-pokemon-center-sky-blue: #70B8F0;
+--color-pokemon-center-white: #F0F0F8;
+--color-pokemon-center-gray: #A8B8C8;
+}
