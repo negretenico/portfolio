@@ -154,7 +154,7 @@ export default function Bag() {
         {/* Bottom Section */}
         <div className="bg-bag-description border-t-2 sm:border-t-4 border-gray-800 p-2 sm:p-4">
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-0">
-            <DescriptionBox description={selectedItem.description} />
+            <DescriptionBox description={selectedItem?.description} />
 
             {/* Action Buttons */}
             <div className="flex sm:flex-col gap-2 w-full sm:w-auto">
