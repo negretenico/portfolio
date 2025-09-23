@@ -93,10 +93,7 @@ const DescriptionBox = ({ description }: any) => {
     </div>
   );
 };
-export default function Bag() {
-  const [selectedPocket, setSelectedPocket] = useState("items");
-  const [selectedItem, setSelectedItem] = useState(null);
-
+const ActionButton = ({ selectedItem, text, color }: any) => {
   const handleUseItem = () => {
     if (!selectedItem) return;
 
@@ -106,6 +103,23 @@ export default function Bag() {
       window.open(selectedItem.link, "_blank");
     }
   };
+  return (
+    <button
+      onClick={handleUseItem}
+      disabled={!selectedItem}
+      className={`flex-1 sm:flex-initial px-4 sm:px-6 py-2 font-bold font-mono border-2 sm:border-4 rounded transition-colors text-sm ${
+        selectedItem
+          ? `bg-${color}-500 text-white border-${color}-700 hover:bg-${color}-600 active:bg-${color}-700`
+          : "bg-gray-300 text-gray-500 border-gray-500 cursor-not-allowed"
+      }`}
+    >
+      {text}
+    </button>
+  );
+};
+export default function Bag() {
+  const [selectedPocket, setSelectedPocket] = useState("items");
+  const [selectedItem, setSelectedItem] = useState(null);
   return (
     <div className="min-h-screen flex items-center justify-center p-2 sm:p-4">
       <div className="w-full max-w-6xl bg-bag-beige border-4 sm:border-8 border-gray-800 rounded-lg shadow-2xl overflow-hidden">
@@ -158,27 +172,16 @@ export default function Bag() {
 
             {/* Action Buttons */}
             <div className="flex sm:flex-col gap-2 w-full sm:w-auto">
-              <button
-                onClick={handleUseItem}
-                disabled={!selectedItem}
-                className={`flex-1 sm:flex-initial px-4 sm:px-6 py-2 font-bold font-mono border-2 sm:border-4 rounded transition-colors text-sm ${
-                  selectedItem
-                    ? "bg-green-500 text-white border-green-700 hover:bg-green-600 active:bg-green-700"
-                    : "bg-gray-300 text-gray-500 border-gray-500 cursor-not-allowed"
-                }`}
-              >
-                USE
-              </button>
-              <button
-                disabled={!selectedItem}
-                className={`flex-1 sm:flex-initial px-4 sm:px-6 py-2 font-bold font-mono border-2 sm:border-4 rounded transition-colors text-sm ${
-                  selectedItem
-                    ? "bg-blue-500 text-white border-blue-700 hover:bg-blue-600"
-                    : "bg-gray-300 text-gray-500 border-gray-500 cursor-not-allowed"
-                }`}
-              >
-                INFO
-              </button>
+              <ActionButton
+                selectedItem={selectedItem}
+                text={"Use"}
+                color={"green"}
+              />
+              <ActionButton
+                selectedItem={selectedItem}
+                text={"Info"}
+                color={"blue"}
+              />
             </div>
           </div>
         </div>
