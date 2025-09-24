@@ -131,14 +131,17 @@ export default function Bag() {
         </div>
 
         <div className="flex flex-col lg:flex-row lg:h-96">
-          <div className="w-full lg:w-1/2 bg-transparent">
-            <Image
-              src={"/BagSprite.png"}
-              alt="Your Sprite"
-              width={512}
-              height={512}
-              className="w-full h-full object-contain"
-            />
+          <div className="w-full lg:w-1/2 bg-transparent flex items-center justify-center p-4">
+            <div className="w-80 h-80">
+              <Image
+                src={"/BagSprite.png"}
+                alt="Your Sprite"
+                width={512}
+                height={512}
+                className="w-full h-full"
+                style={{ objectFit: "contain" }}
+              />
+            </div>
           </div>
           <div className="w-full lg:w-1/2 bg-gray-100 flex flex-col min-h-64 lg:min-h-0">
             <div className="bg-bag-border border-b border-gray-400 sm:border-b-2 p-1 sm:p-2">
@@ -176,11 +179,6 @@ export default function Bag() {
                 selectedItem={selectedItem}
                 text={"Use"}
                 color={"green"}
-              />
-              <ActionButton
-                selectedItem={selectedItem}
-                text={"Info"}
-                color={"blue"}
               />
             </div>
           </div>
