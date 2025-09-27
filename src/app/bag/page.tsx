@@ -118,7 +118,7 @@ const ActionButton = ({ selectedItem, text, color }: any) => {
   );
 };
 export default function Bag() {
-  const [selectedPocket, setSelectedPocket] = useState("items");
+  const [selectedPocket, setSelectedPocket] = useState("keyItems");
   const [selectedItem, setSelectedItem] = useState(null);
   return (
     <div className="min-h-screen flex items-center justify-center p-2 sm:p-4">
@@ -163,6 +163,7 @@ export default function Bag() {
               <Items
                 pocket={pockets[selectedPocket] as any}
                 setSelectedItem={setSelectedItem}
+                selectedId={selectedItem?.id}
               />
             </div>
           </div>

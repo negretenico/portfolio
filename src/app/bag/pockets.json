@@ -1,5 +1,4 @@
 {
-  "items": { "name": "ITEMS", "items": [] },
   "keyItems": {
     "name": "KEY ITEMS",
     "items": [
@@ -15,7 +14,7 @@
         "name": "GITHUB CARD",
         "description": "A special card that grants access to Nico's code repositories.",
         "action": "link",
-        "link": "https://github.com"
+        "link": "https://github.com/negretenico"
       }
     ]
   },
@@ -27,14 +26,14 @@
         "name": "TM47 GITHUB ACTIONS",
         "description": "Contains the move AUTOMATE. Streamlines deployment processes.",
         "action": "link",
-        "link": "#"
+        "link": "https://github.com/negretenico/GithubWorkflows"
       },
       {
         "id": 4,
         "name": "TM83 SPRING BOOT",
         "description": "Contains the move RAPID DEV. Creates robust applications quickly.",
         "action": "link",
-        "link": "#"
+        "link": "https://github.com/negretenico/spring-template"
       }
     ]
   },
@@ -42,18 +41,25 @@
     "name": "QUEST LOG",
     "items": [
       {
+        "id": 11,
+        "name": "Quantica",
+        "description": "A quest to stream binace data and write meaningful insights.",
+        "action": "link",
+        "link": "https://github.com/negretenico/Quantica"
+      },
+      {
         "id": 5,
-        "name": "FIGHTIQ PROJECT",
+        "name": "FIGHTIQ",
         "description": "An ongoing quest to revolutionize combat sports analytics.",
         "action": "link",
-        "link": "#"
+        "link": "https://github.com/negretenico/FightIQ"
       },
       {
         "id": 6,
-        "name": "PROTOTYPE ITEMS",
-        "description": "Various experimental projects in active development.",
+        "name": "MatLogs",
+        "description": "A quest to journal and share lessons\\techinques about BJJ",
         "action": "link",
-        "link": "#"
+        "link": "https://negretenico.github.io/MatLogs/"
       }
     ]
   },
