@@ -72,7 +72,7 @@ const Pokedex = () => {
                   <button
                     key={project.id}
                     onClick={() => setSelectedProject(project)}
-                    className={`p-2 sm:p-3 rounded-lg border-2 transition-all text-xs sm:text-base md:text-lg font-medium truncate ${
+                    className={`p-2 sm:p-3 rounded-lg border-2 cursor-pointer transition-all text-xs sm:text-base md:text-lg font-medium truncate ${
                       selectedProject.id === project.id
                         ? "bg-blue-500 text-white border-blue-600 shadow-lg"
                         : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50"

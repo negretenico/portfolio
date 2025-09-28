@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
+import Footer from "./components/Footer";
+import { AudioProvider } from "./context/AudioContext";
+import GlobalClickSound from "./context/GlobalClickSound";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -60,8 +63,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${pressStart2p.className} antialiased`}>
-        <ImagePreloader />
-        {children}
+        <AudioProvider>
+          <ImagePreloader />
+          <GlobalClickSound />
+          {children}
+          <Footer />
+        </AudioProvider>
       </body>
     </html>
   );
