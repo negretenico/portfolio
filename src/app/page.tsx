@@ -3,7 +3,6 @@ import TrainerCard from "./components/TrainerCard";
 import PauseMenu from "./components/PauseMenu";
 
 export default async function Home() {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
   return (
     <div className="min-h-screen flex items-center justify-center p-8">
       <main className="flex flex-col items-center gap-8">
