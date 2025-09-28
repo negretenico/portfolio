@@ -1,0 +1,78 @@
+{
+  "keyItems": {
+    "name": "KEY ITEMS",
+    "items": [
+      {
+        "id": 1,
+        "name": "TOWN MAP",
+        "description": "A detailed map showing Nico's professional journey and career milestones.",
+        "action": "download",
+        "link": "/Nicholas_Negrete_Resume2025.09.28.pdf"
+      },
+      {
+        "id": 2,
+        "name": "GITHUB CARD",
+        "description": "A special card that grants access to Nico's code repositories.",
+        "action": "link",
+        "link": "https://github.com/negretenico"
+      }
+    ]
+  },
+  "pokeballs": {
+    "name": "TM CASE",
+    "items": [
+      {
+        "id": 3,
+        "name": "TM47 GITHUB ACTIONS",
+        "description": "Contains the move AUTOMATE. Streamlines deployment processes.",
+        "action": "link",
+        "link": "https://github.com/negretenico/GithubWorkflows"
+      },
+      {
+        "id": 4,
+        "name": "TM83 SPRING BOOT",
+        "description": "Contains the move RAPID DEV. Creates robust applications quickly.",
+        "action": "link",
+        "link": "https://github.com/negretenico/spring-template"
+      }
+    ]
+  },
+  "berries": {
+    "name": "QUEST LOG",
+    "items": [
+      {
+        "id": 11,
+        "name": "Quantica",
+        "description": "A quest to stream binace data and write meaningful insights.",
+        "action": "link",
+        "link": "https://github.com/negretenico/Quantica"
+      },
+      {
+        "id": 5,
+        "name": "FIGHTIQ",
+        "description": "An ongoing quest to revolutionize combat sports analytics.",
+        "action": "link",
+        "link": "https://github.com/negretenico/FightIQ"
+      },
+      {
+        "id": 6,
+        "name": "MatLogs",
+        "description": "A quest to journal and share lessons\\techinques about BJJ",
+        "action": "link",
+        "link": "https://negretenico.github.io/MatLogs/"
+      }
+    ]
+  },
+  "tmCase": {
+    "name": "WRITINGS",
+    "items": [
+      {
+        "id": 7,
+        "name": "DEV JOURNAL",
+        "description": "A collection of technical insights and coding adventures.",
+        "action": "link",
+        "link": "https://negretenico.github.io/DevLogs/"
+      }
+    ]
+  }
+}

@@ -56,9 +56,6 @@ export default function PauseMenu() {
         <Link href="pokemon-center">
           <WavyText text={"Pokémon Center"} />
         </Link>
-        <Link href="options">
-          <WavyText text={"Options"} />
-        </Link>
       </div>
     </div>
   );

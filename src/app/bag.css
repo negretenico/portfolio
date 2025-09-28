@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@theme{
+  /* 🎒 Bag Base */
+  --color-bag-tan: #F5E6B3;
+  --color-bag-yellow: #ffffce;
+  --color-bag-beige: #FAF4DB;
+  --color-bag-background: ##6C8CD5;
+  /* 🧳 Bag Pockets */
+  --color-bag-description: #007bc6;
+  /* ✏️ Softer Text & Borders */
+  --color-bag-border: #f7ce73;     /* Soft warm brown */
+  --color-bag-border-underline:#de8c4a;
+  --color-bag-text: #444444;       /* Neutral dark gray */
+  --color-bag-text-light: #FFFFFF; /* For contrast on dark backgrounds */
+  --color-bag-selection:#636363;
+}
