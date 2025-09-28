@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import pockets from "./pockets.json";
+import Link from "next/link";
 const BagItem = ({ name, kkey, onClick, isSelected }: any) => {
   const [hovered, setHovered] = useState(false);
   return (
@@ -94,19 +95,16 @@ const DescriptionBox = ({ description }: any) => {
   );
 };
 const ActionButton = ({ selectedItem, text, color }: any) => {
-  const handleUseItem = () => {
-    if (!selectedItem) return;
-
-    if (selectedItem.action === "download") {
-      console.log("Download:", selectedItem.name);
-    } else if (selectedItem.action === "link") {
-      window.open(selectedItem.link, "_blank");
-    }
-  };
   return (
-    <button
-      onClick={handleUseItem}
-      disabled={!selectedItem}
+    <Link
+      href={selectedItem?.link ?? "/"}
+      target="_blank"
+      rel="noopener noreferrer"
+      download={
+        selectedItem?.action === "download"
+          ? selectedItem?.link?.substring(1)
+          : null
+      }
       className={`flex-1 sm:flex-initial px-4 sm:px-6 py-2 font-bold font-mono border-2 sm:border-4 rounded transition-colors text-sm ${
         selectedItem
           ? `bg-${color}-500 text-white border-${color}-700 hover:bg-${color}-600 active:bg-${color}-700`
@@ -114,7 +112,7 @@ const ActionButton = ({ selectedItem, text, color }: any) => {
       }`}
     >
       {text}
-    </button>
+    </Link>
   );
 };
 export default function Bag() {
@@ -124,7 +122,9 @@ export default function Bag() {
     <div className="min-h-screen flex items-center justify-center p-2 sm:p-4">
       <div className="w-full max-w-6xl bg-bag-beige border-4 sm:border-8 border-gray-800 rounded-lg shadow-2xl overflow-hidden">
         <div className="bg-bag-border border-b-2 sm:border-b-4 border-gray-800 p-2 sm:p-4 flex items-center">
-          <div className="w-6 h-6 sm:w-8 sm:h-8 bg-red-500 rounded-full border-2 border-red-700 mr-2 sm:mr-4"></div>
+          <Link href="/" title="home">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-red-500 rounded-full border-2 border-red-700 mr-2 sm:mr-4"></div>
+          </Link>
           <h1 className="text-xl sm:text-2xl font-bold text-white tracking-wider font-mono">
             BAG
           </h1>

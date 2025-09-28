@@ -7,7 +7,7 @@
         "name": "TOWN MAP",
         "description": "A detailed map showing Nico's professional journey and career milestones.",
         "action": "download",
-        "link": "#"
+        "link": "/Nicholas_Negrete_Resume2025.09.28.pdf"
       },
       {
         "id": 2,
@@ -71,14 +71,7 @@
         "name": "DEV JOURNAL",
         "description": "A collection of technical insights and coding adventures.",
         "action": "link",
-        "link": "#"
-      },
-      {
-        "id": 8,
-        "name": "CODE GUIDES",
-        "description": "Detailed tutorials crafted from real-world experience.",
-        "action": "link",
-        "link": "#"
+        "link": "https://negretenico.github.io/DevLogs/"
       }
     ]
   }
