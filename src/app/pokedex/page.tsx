@@ -2,9 +2,16 @@
 import React, { useState } from "react";
 import seedData from "./projects.json";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import Aurora from "../backgrounds/Aurora/Aurora";
 
-const StatBar = ({ label, value, color, isOpen }) => (
+type StatBarProps = {
+  label: string;
+  value: string | number;
+  color: string;
+  isOpen: boolean;
+};
+
+const StatBar = ({ label, value, color, isOpen }: StatBarProps) => (
   <div className="mb-3">
     <div className="flex flex-wrap justify-between text-xs sm:text-sm font-medium text-gray-700 mb-1">
       <span className="truncate">{label}</span>
@@ -29,6 +36,16 @@ const Pokedex = () => {
 
   return (
     <div className="min-h-screen p-4 sm:p-8 flex items-center justify-center">
+      <div className="absolute inset-0 -z-10">
+        <div className="w-full h-full">
+          <Aurora
+            colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
+            blend={1.5}
+            speed={1.0}
+          />
+        </div>
+      </div>
+
       <div
         className={`transition-all duration-1000 ease-out ${
           isOpen ? "scale-100 opacity-100" : "scale-95 opacity-0"
@@ -72,7 +89,7 @@ const Pokedex = () => {
                   <button
                     key={project.id}
                     onClick={() => setSelectedProject(project)}
-                    className={`p-2 sm:p-3 rounded-lg border-2 transition-all text-xs sm:text-base md:text-lg font-medium truncate ${
+                    className={`p-2 sm:p-3 rounded-lg border-2 cursor-pointer transition-all text-xs sm:text-base md:text-lg font-medium truncate ${
                       selectedProject.id === project.id
                         ? "bg-blue-500 text-white border-blue-600 shadow-lg"
                         : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50"

@@ -3,8 +3,17 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
-const PokemonCenterBtn = ({ isProcessing, handleClick, text }: any) => {
+import Aurora from "../backgrounds/Aurora/Aurora";
+type PokemonCenterBtnProps = {
+  isProcessing: boolean;
+  handleClick: (v: string) => void;
+  text: string;
+};
+const PokemonCenterBtn = ({
+  isProcessing,
+  handleClick,
+  text,
+}: PokemonCenterBtnProps) => {
   return (
     <button
       className="cursor-pointer bg-pokemon-center-l-red hover:bg-pokemon-center-d-red text-pokemon-center-white py-2 rounded"
@@ -79,6 +88,14 @@ export default function PokemonCenter() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-8">
       <main className="flex flex-col items-center gap-8">
+        {/* Background Particles */}
+        <div className="absolute inset-0 -z-10">
+          <Aurora
+            colorStops={["#C85048", "#F0F0F8", "#70B8F0"]}
+            blend={1.5}
+            speed={1.0}
+          />
+        </div>
         <div className="rounded overflow-hidden shadow-lg border-pokemon-center-gray border-2 p-6 w-full max-w-md flex flex-col items-center">
           <h1 className="text-xl text-pokemon-center-sky-blue font-bold mb-4 text-center">
             How would you like to connect?

@@ -1,10 +1,43 @@
 "use client";
-import { useState } from "react";
+import {
+  AnchorHTMLAttributes,
+  Dispatch,
+  MouseEventHandler,
+  SetStateAction,
+  useState,
+} from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import pockets from "./pockets.json";
 import Link from "next/link";
-const BagItem = ({ name, kkey, onClick, isSelected }: any) => {
+import Aurora from "../backgrounds/Aurora/Aurora";
+export interface Pockets {
+  keyItems: Pocket;
+  pokeballs: Pocket;
+  berries: Pocket;
+  tmCase: Pocket;
+}
+
+export interface Pocket {
+  name: string;
+  items: Item[];
+}
+
+export interface Item {
+  id: number;
+  name: string;
+  description: string;
+  action: string;
+  link: string;
+}
+
+type BagItemProps = {
+  name: string;
+  kkey: string;
+  onClick: MouseEventHandler<HTMLAnchorElement>;
+  isSelected: boolean;
+};
+const BagItem = ({ name, kkey, onClick, isSelected }: BagItemProps) => {
   const [hovered, setHovered] = useState(false);
   return (
     <div
@@ -37,7 +70,13 @@ const BagItem = ({ name, kkey, onClick, isSelected }: any) => {
   );
 };
 
-const Item = ({ item, isSelected, onClick }: any) => {
+type ItemProps = {
+  item: Item;
+  isSelected: boolean;
+  onClick: MouseEventHandler<HTMLDivElement>;
+};
+
+const Item = ({ item, isSelected, onClick }: ItemProps) => {
   return (
     <div
       key={item.id}
@@ -55,8 +94,15 @@ const Item = ({ item, isSelected, onClick }: any) => {
     </div>
   );
 };
-const Items = ({ pocket, setSelectedItem, selectedId }: any) => {
-  const handleItemClick = (item) => {
+
+type ItemsProps = {
+  pocket: Pocket;
+  setSelectedItem: Dispatch<SetStateAction<Item | null>>;
+  selectedId: number | undefined;
+};
+
+const Items = ({ pocket, setSelectedItem, selectedId }: ItemsProps) => {
+  const handleItemClick = (item: Item) => {
     setSelectedItem(item);
   };
 
@@ -67,7 +113,7 @@ const Items = ({ pocket, setSelectedItem, selectedId }: any) => {
       </div>
     );
   }
-  return pocket.items.map((item: any) => (
+  return pocket.items.map((item: Item) => (
     <Item
       item={item}
       key={item.id}
@@ -76,7 +122,12 @@ const Items = ({ pocket, setSelectedItem, selectedId }: any) => {
     />
   ));
 };
-const DescriptionBox = ({ description }: any) => {
+
+const DescriptionBox = ({
+  description,
+}: {
+  description: string | undefined;
+}) => {
   if (!description) {
     return (
       <div className="flex-1 bg-white border-2 sm:border-4 border-gray-600 rounded p-2 sm:p-4 sm:mr-4 min-h-16 sm:min-h-24">
@@ -94,7 +145,13 @@ const DescriptionBox = ({ description }: any) => {
     </div>
   );
 };
-const ActionButton = ({ selectedItem, text, color }: any) => {
+type ActionButtonProps = {
+  selectedItem: Item | null;
+  text: string;
+  color: string;
+};
+
+const ActionButton = ({ selectedItem, text, color }: ActionButtonProps) => {
   return (
     <Link
       href={selectedItem?.link ?? "/"}
@@ -116,10 +173,19 @@ const ActionButton = ({ selectedItem, text, color }: any) => {
   );
 };
 export default function Bag() {
-  const [selectedPocket, setSelectedPocket] = useState("keyItems");
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedPocket, setSelectedPocket] =
+    useState<keyof Pockets>("keyItems");
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
+  const pocket = (pockets as Pockets)[selectedPocket];
   return (
     <div className="min-h-screen flex items-center justify-center p-2 sm:p-4">
+      <div className="absolute inset-0 -z-10">
+        <Aurora
+          colorStops={["#f7ce73", "#F5E6B3", "#6C8CD5"]}
+          blend={1.5}
+          speed={1.0}
+        />
+      </div>
       <div className="w-full max-w-6xl bg-bag-beige border-4 sm:border-8 border-gray-800 rounded-lg shadow-2xl overflow-hidden">
         <div className="bg-bag-border border-b-2 sm:border-b-4 border-gray-800 p-2 sm:p-4 flex items-center">
           <Link href="/" title="home">
@@ -149,7 +215,7 @@ export default function Bag() {
                 {Object.entries(pockets).map(([key, pocket]) => (
                   <BagItem
                     key={key}
-                    onClick={() => setSelectedPocket(key)}
+                    onClick={() => setSelectedPocket(key as keyof Pockets)}
                     kkey={key}
                     name={pocket.name}
                     isSelected={selectedPocket === key}
@@ -161,7 +227,7 @@ export default function Bag() {
             {/* Items List */}
             <div className="flex-1 p-2 sm:p-4 overflow-y-auto max-h-48 lg:max-h-none bg-bag-yellow">
               <Items
-                pocket={pockets[selectedPocket] as any}
+                pocket={pocket}
                 setSelectedItem={setSelectedItem}
                 selectedId={selectedItem?.id}
               />
