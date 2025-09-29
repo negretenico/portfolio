@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Aurora from "../backgrounds/Aurora/Aurora";
+const isProd = process.env.NODE_ENV === "production";
 type PokemonCenterBtnProps = {
   isProcessing: boolean;
   handleClick: (v: string) => void;
@@ -107,8 +108,12 @@ export default function PokemonCenter() {
                 <Image
                   src={
                     isProcessing
-                      ? "/greeting/Nico_Sprite_Sheet_Greeting.gif"
-                      : "/greeting/Nico_Sprite_Sheet_Greeting.png"
+                      ? `/${
+                          isProd ? "portfolio/" : ""
+                        }greeting/Nico_Sprite_Sheet_Greeting.gif`
+                      : `/${
+                          isProd ? "portfolio/" : ""
+                        }greeting/Nico_Sprite_Sheet_Greeting.png`
                   }
                   alt="Your Sprite"
                   width={512}
