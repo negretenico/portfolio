@@ -2,14 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function NotFound() {
+  const msg =
+    "Hey! Wait! Don't go out there! It's unsafe! I know! Here, come with me!";
   return (
     <div className="flex items-center justify-center min-h-screen md:items-start">
       <div className="text-center">
         <div className="text-center md:text-left px-4 md:flex-auto flex flex-col justify-evenly space-y-1">
-          <p className="underline decoration-n-blue">
-            Hey! Wait! Don't go out there! It's unsafe! I know! Here, come with
-            me!
-          </p>
+          <p className="underline decoration-n-blue">{msg}</p>
         </div>
 
         {/* Centered image container with loading placeholder */}

@@ -4,8 +4,16 @@ import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Aurora from "../backgrounds/Aurora/Aurora";
-
-const PokemonCenterBtn = ({ isProcessing, handleClick, text }: any) => {
+type PokemonCenterBtnProps = {
+  isProcessing: boolean;
+  handleClick: (v: string) => void;
+  text: string;
+};
+const PokemonCenterBtn = ({
+  isProcessing,
+  handleClick,
+  text,
+}: PokemonCenterBtnProps) => {
   return (
     <button
       className="cursor-pointer bg-pokemon-center-l-red hover:bg-pokemon-center-d-red text-pokemon-center-white py-2 rounded"
