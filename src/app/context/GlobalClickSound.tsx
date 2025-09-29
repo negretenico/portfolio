@@ -18,7 +18,7 @@ export default function GlobalClickSound() {
 
       if (!initialized.current) {
         // First interaction - initialize audio context
-        const initAudio = new Audio("/pokemon-select.wav");
+        const initAudio = new Audio("./pokemon-select.wav");
         initAudio.volume = 0;
         initAudio
           .play()

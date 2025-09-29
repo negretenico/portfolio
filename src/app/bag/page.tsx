@@ -200,7 +200,7 @@ export default function Bag() {
           <div className="w-full lg:w-1/2 bg-transparent flex items-center justify-center p-4">
             <div className="w-80 h-80">
               <Image
-                src={"/BagSprite.png"}
+                src={"./BagSprite.png"}
                 alt="Your Sprite"
                 width={512}
                 height={512}

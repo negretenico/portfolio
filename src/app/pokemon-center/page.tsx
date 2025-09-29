@@ -107,8 +107,8 @@ export default function PokemonCenter() {
                 <Image
                   src={
                     isProcessing
-                      ? "/greeting/Nico_Sprite_Sheet_Greeting.gif"
-                      : "/greeting/Nico_Sprite_Sheet_Greeting.png"
+                      ? "./greeting/Nico_Sprite_Sheet_Greeting.gif"
+                      : "./greeting/Nico_Sprite_Sheet_Greeting.png"
                   }
                   alt="Your Sprite"
                   width={512}

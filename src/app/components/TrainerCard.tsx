@@ -95,7 +95,7 @@ function TrainerCardBody() {
       </div>
       <div className="mx-2">
         <Image
-          src="/thinking/Nico_Sprite_Thinking.gif"
+          src="./thinking/Nico_Sprite_Thinking.gif"
           width={128}
           height={128}
           alt="Picture of the author"
