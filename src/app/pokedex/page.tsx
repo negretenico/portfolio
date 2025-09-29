@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import seedData from "./projects.json";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { AuroraBackground } from "reactbits";
+import Aurora from "../backgrounds/Aurora/Aurora";
 
 const StatBar = ({ label, value, color, isOpen }) => (
   <div className="mb-3">
@@ -29,6 +31,14 @@ const Pokedex = () => {
 
   return (
     <div className="min-h-screen p-4 sm:p-8 flex items-center justify-center">
+      <div className="absolute inset-0 -z-10">
+        <Aurora
+          colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={0.5}
+        />
+      </div>
       <div
         className={`transition-all duration-1000 ease-out ${
           isOpen ? "scale-100 opacity-100" : "scale-95 opacity-0"

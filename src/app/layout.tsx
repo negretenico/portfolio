@@ -5,6 +5,7 @@ import Image from "next/image";
 import Footer from "./components/Footer";
 import { AudioProvider } from "./context/AudioContext";
 import GlobalClickSound from "./context/GlobalClickSound";
+import ImageTrail from "./components/ImageTrail";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

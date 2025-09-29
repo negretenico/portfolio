@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import pockets from "./pockets.json";
 import Link from "next/link";
+import Particles from "../backgrounds/Particles/Particles";
+import Aurora from "../backgrounds/Aurora/Aurora";
 const BagItem = ({ name, kkey, onClick, isSelected }: any) => {
   const [hovered, setHovered] = useState(false);
   return (
@@ -120,6 +122,14 @@ export default function Bag() {
   const [selectedItem, setSelectedItem] = useState(null);
   return (
     <div className="min-h-screen flex items-center justify-center p-2 sm:p-4">
+      <div className="absolute inset-0 -z-10">
+        <Aurora
+          colorStops={["#f7ce73", "#F5E6B3", "#6C8CD5"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={0.5}
+        />
+      </div>
       <div className="w-full max-w-6xl bg-bag-beige border-4 sm:border-8 border-gray-800 rounded-lg shadow-2xl overflow-hidden">
         <div className="bg-bag-border border-b-2 sm:border-b-4 border-gray-800 p-2 sm:p-4 flex items-center">
           <Link href="/" title="home">

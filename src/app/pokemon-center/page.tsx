@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Aurora from "../backgrounds/Aurora/Aurora";
 
 const PokemonCenterBtn = ({ isProcessing, handleClick, text }: any) => {
   return (
@@ -79,6 +80,15 @@ export default function PokemonCenter() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-8">
       <main className="flex flex-col items-center gap-8">
+        {/* Background Particles */}
+        <div className="absolute inset-0 -z-10">
+          <Aurora
+            colorStops={["#C85048", "#F0F0F8", "#70B8F0"]}
+            blend={0.5}
+            amplitude={1.0}
+            speed={0.5}
+          />
+        </div>
         <div className="rounded overflow-hidden shadow-lg border-pokemon-center-gray border-2 p-6 w-full max-w-md flex flex-col items-center">
           <h1 className="text-xl text-pokemon-center-sky-blue font-bold mb-4 text-center">
             How would you like to connect?
