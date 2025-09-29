@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useCallback } from "react";
 import { useAudio } from "./AudioContext";
+const isProd = process.env.NODE_ENV === "production";
 const playClickSound = (muted: boolean) => {
   if (muted) return;
 
@@ -18,7 +19,9 @@ export default function GlobalClickSound() {
 
       if (!initialized.current) {
         // First interaction - initialize audio context
-        const initAudio = new Audio("./pokemon-select.wav");
+        const initAudio = new Audio(
+          `/${isProd ? "portfolio/" : ""}pokemon-select.wav`
+        );
         initAudio.volume = 0;
         initAudio
           .play()

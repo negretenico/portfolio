@@ -11,6 +11,7 @@ import Image from "next/image";
 import pockets from "./pockets.json";
 import Link from "next/link";
 import Aurora from "../backgrounds/Aurora/Aurora";
+const isProd = process.env.NODE_ENV === "production";
 export interface Pockets {
   keyItems: Pocket;
   pokeballs: Pocket;
@@ -200,7 +201,7 @@ export default function Bag() {
           <div className="w-full lg:w-1/2 bg-transparent flex items-center justify-center p-4">
             <div className="w-80 h-80">
               <Image
-                src={"./BagSprite.png"}
+                src={`/${isProd ? "porfolio/" : ""}BagSprite.png`}
                 alt="Your Sprite"
                 width={512}
                 height={512}

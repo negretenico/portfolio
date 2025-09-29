@@ -2,6 +2,7 @@
 import { HiOutlineSpeakerWave, HiOutlineSpeakerXMark } from "react-icons/hi2";
 import { useRef, useState, useEffect } from "react";
 import { useAudio } from "../context/AudioContext";
+const isProd = process.env.NODE_ENV === "production";
 const Speaker = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const { muted, toggleMute } = useAudio();
@@ -30,7 +31,11 @@ const Speaker = () => {
         className="cursor-pointer"
         onClick={togglePlay}
       />
-      <audio ref={audioRef} loop src="/background-music.mp3">
+      <audio
+        ref={audioRef}
+        loop
+        src={`/${isProd ? "portfolio/" : ""}background-music.mp3`}
+      >
         <track
           kind="captions"
           src="/captions/pokemon_music.vtt"

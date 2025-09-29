@@ -10,6 +10,7 @@ import {
   SiPostgresql,
 } from "react-icons/si";
 import { FaBrain, FaJava, FaAws } from "react-icons/fa";
+const isProd = process.env.NODE_ENV === "production";
 function TrainerCardHeader() {
   return (
     <div className="bg-d-blue py-2 flex flex-col items-center gap-2 md:flex-row md:justify-between md:items-start">
@@ -95,7 +96,9 @@ function TrainerCardBody() {
       </div>
       <div className="mx-2">
         <Image
-          src="./thinking/Nico_Sprite_Thinking.gif"
+          src={`/${
+            isProd ? "portfolio/" : ""
+          }thinking/Nico_Sprite_Thinking.gif`}
           width={128}
           height={128}
           alt="Picture of the author"
