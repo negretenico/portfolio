@@ -5,7 +5,7 @@ const isProd = process.env.NODE_ENV === "production";
 const playClickSound = (muted: boolean) => {
   if (muted) return;
 
-  const audio = new Audio("/pokemon-select.wav");
+  const audio = new Audio(`/${isProd ? "portfolio/" : ""}pokemon-select.wav`);
   audio.volume = 1;
   audio.play().catch((err) => console.warn("Sound failed:", err));
 };
