@@ -147,14 +147,14 @@ export default function Aurora(props: AuroraProps) {
     let program: Program | undefined;
 
     function resize() {
-      if (!ctn) return;
-      const width = ctn.offsetWidth;
-      const height = ctn.offsetHeight;
+      const width = window.innerWidth;
+      const height = window.innerHeight;
       renderer.setSize(width, height);
       if (program) {
         program.uniforms.uResolution.value = [width, height];
       }
     }
+
     window.addEventListener("resize", resize);
 
     const geometry = new Triangle(gl);
@@ -212,5 +212,5 @@ export default function Aurora(props: AuroraProps) {
     };
   }, [amplitude]);
 
-  return <div ref={ctnDom} className="aurora-container" />;
+  return <div ref={ctnDom} className="fixed inset-0 w-full h-screen" />;
 }

@@ -84,9 +84,8 @@ export default function PokemonCenter() {
         <div className="absolute inset-0 -z-10">
           <Aurora
             colorStops={["#C85048", "#F0F0F8", "#70B8F0"]}
-            blend={0.5}
-            amplitude={1.0}
-            speed={0.5}
+            blend={1.5}
+            speed={1.0}
           />
         </div>
         <div className="rounded overflow-hidden shadow-lg border-pokemon-center-gray border-2 p-6 w-full max-w-md flex flex-col items-center">

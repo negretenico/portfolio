@@ -125,9 +125,8 @@ export default function Bag() {
       <div className="absolute inset-0 -z-10">
         <Aurora
           colorStops={["#f7ce73", "#F5E6B3", "#6C8CD5"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
+          blend={1.5}
+          speed={1.0}
         />
       </div>
       <div className="w-full max-w-6xl bg-bag-beige border-4 sm:border-8 border-gray-800 rounded-lg shadow-2xl overflow-hidden">
