@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import seedData from "./projects.json";
+import { projects as seedData } from "@/data/projects";
+import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import Aurora from "../backgrounds/Aurora/Aurora";
 
@@ -119,6 +120,17 @@ const Pokedex = () => {
                 <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed break-words">
                   {selectedProject.description}
                 </p>
+                {selectedProject.githubUrl && (
+                  <a
+                    href={selectedProject.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 mt-3 px-3 py-1.5 bg-gray-800 text-white rounded-full text-xs sm:text-sm hover:bg-gray-700 transition-colors"
+                  >
+                    <FaGithub className="w-4 h-4" />
+                    View on GitHub
+                  </a>
+                )}
               </div>
               <div className="bg-white rounded-lg p-3 sm:p-4 border-2 border-gray-300">
                 <h4 className="font-bold text-gray-800 mb-2 sm:mb-3 text-sm sm:text-base">

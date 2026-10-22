@@ -1,11 +1,13 @@
 import TrainerCard from "./components/TrainerCard";
-import PauseMenu from "./components/PauseMenu";
+import ProjectsPanel from "./components/ProjectsPanel";
+import ExperiencePanel from "./components/ExperiencePanel";
+import SocialLinks from "./components/SocialLinks";
 import Aurora from "./backgrounds/Aurora/Aurora";
 
 export default async function Home() {
   return (
-    <div className="min-h-screen flex items-center justify-center p-8">
-      {/* Background Particles */}
+    <div className="min-h-screen flex flex-col">
+      {/* Background */}
       <div className="absolute inset-0 -z-10">
         <Aurora
           colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
@@ -13,20 +15,28 @@ export default async function Home() {
           speed={1.0}
         />
       </div>
-      <main className="flex flex-col items-center gap-8">
-        {/* Container for the reveal effect with overflow hidden */}
-        <h1 className="animate-appear text-4xl font-bold text-center">
-          Nico wants to battle!
-        </h1>
+
+      {/* Main content */}
+      <main className="flex-1 flex flex-col items-center gap-6 px-4 md:px-16 py-8">
+        {/* Hero text */}
+        <div className="animate-appear text-center">
+          <h1 className="text-2xl md:text-4xl font-bold">Nico Negrete</h1>
+          <SocialLinks />
+        </div>
+
+        {/* Trainer Card with reveal animation */}
         <div className="relative overflow-hidden">
           <div className="animate-reveal">
             <TrainerCard />
           </div>
           <div className="glare-sweep animate-glare-swipe"></div>
         </div>
-        <div className="animate-appear">
-          <PauseMenu />
-        </div>
+
+        {/* Projects */}
+        <ProjectsPanel />
+
+        {/* Experience */}
+        <ExperiencePanel />
       </main>
     </div>
   );
