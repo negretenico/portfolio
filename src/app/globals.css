@@ -4,6 +4,7 @@
 @import "./pausemenu.css";
 @import "./pokemon-center.css";
 @import "./bag.css";
+@import "./portfolio.css";
 
 .perspective {
   perspective: 2000px;

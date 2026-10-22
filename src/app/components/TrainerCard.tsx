@@ -91,7 +91,7 @@ function TrainerCardBody() {
           <Star />
         </span>
         <p>Pokedex: 60+</p>
-        <p>Type: Fullstack, Dev Lead</p>
+        <p>Type: Backend / Distributed Systems</p>
         <p>Level: 5 years</p>
       </div>
       <div className="mx-2">
