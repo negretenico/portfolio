@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Press_Start_2P } from "next/font/google";
 import "./globals.css";
-import Image from "next/image";
 import Footer from "./components/Footer";
 import { AudioProvider } from "./context/AudioContext";
 import GlobalClickSound from "./context/GlobalClickSound";
@@ -22,39 +21,10 @@ const pressStart2p = Press_Start_2P({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Nico's Portfolio",
+  title: "Nico Negrete — Backend & Distributed Systems Engineer",
+  description:
+    "Backend and distributed systems engineer with 5 years at JPMorgan Chase. AWS migrations, real-time data pipelines, and monitoring at scale.",
 };
-
-// Hidden preloader component
-function ImagePreloader() {
-  return (
-    <div style={{ display: "none" }}>
-      {/* Preload critical images */}
-      <Image
-        src="/celebration/Nico_Sprite_Sheet_Celebration.gif"
-        width={128}
-        height={128}
-        alt=""
-        priority
-      />
-      <Image
-        src="/greeting/Nico_Sprite_Sheet_Greeting.gif"
-        width={128}
-        height={128}
-        alt=""
-        priority
-      />
-      <Image
-        src="/thinking/Nico_Sprite_Sheet_Thinking.gif"
-        width={128}
-        height={128}
-        alt=""
-        priority
-      />
-    </div>
-  );
-}
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -64,7 +34,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${pressStart2p.className} antialiased`}>
         <AudioProvider>
-          <ImagePreloader />
           <GlobalClickSound />
           {children}
           <Footer />
